@@ -1,1 +1,0 @@
-# demo-specmatic-contract-repo

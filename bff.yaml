@@ -1,0 +1,40 @@
+openapi: 3.0.1
+info:
+  title: Contract for the petstore service
+  version: '1'
+paths:
+  /wallets/{userId}:
+    get:
+      summary: Should be able to get a wallet by userId
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          schema:
+            type: string
+          examples:
+            WALLET_200_OK:
+              value: '1'
+      responses:
+        '200':
+          description: Should be able to get a wallet by userId
+          content:
+            application/json:
+              schema:
+                required:
+                  - id
+                  - user_id
+                  - balance
+                properties:
+                  id:
+                    type: string
+                  userId:
+                    type: string
+                  balance:
+                    type: number
+              examples:
+                WALLET_200_OK:
+                  value:
+                    id: '1'
+                    userId: '1'
+                    balance: 3.50
